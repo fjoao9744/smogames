@@ -30,7 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'authentication'
+    'authentication',
+    'data'
 ]
 
 MIDDLEWARE = [
@@ -115,8 +116,5 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Durante o desenvolvimento
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')    # Para produção (collectstatic)
-
-# Arquivos de mídia (opcional)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
