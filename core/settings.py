@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-s62(l5)%dvoql*^ey7*0w%x7=v*w)o!s#o0pyj(aevr9id0-f+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['smogames.onrender.com', 'localhost:8000']
 
 
 # Application definition
