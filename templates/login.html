@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+      <div id="root">
+        <section>
+        </section>
+        <main>
+          
+          <div id="login__area">
+            
+            <div class="login__header">
+              <div class="login__title"><h2>Bem vindo ao Smogames!</h2></div>
+              <input type="text" name="username" id="email__login" class="input__types" placeholder="Informar username" required/>
+              <input type="text" name="email" id="email__login" class="input__types" placeholder="Informar senha" required/>
+              <button id="submit__info">Continuar</button>
+              <span>Sem Conta? <a href="{% url 'register' %}">Registre-se aqui!</a></span>
+            </div>
+         <div class="login__options"><div class="line__style"></div>  ou <div class="line__style"></div></div>
+         <div class="login__main">
+           <button type="submit" class="google__submit box">Continuar com o Google</button>
+           <div class="login__alert box">
+            Ao continuar, você concorda em receber chamadas e mensagens por Email, inclusive automáticas, da Smogames e de suas afiliadas.
+            </div>
+         </div>
+      </div>
+        </main>
+      </div>
+      
+      
+      <script src="script.js"></script>
+  </body>
+</html>

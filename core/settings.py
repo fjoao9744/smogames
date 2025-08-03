@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-s62(l5)%dvoql*^ey7*0w%x7=v*w)o!s#o0pyj(aevr9id0-f+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['smogames.onrender.com', 'localhost:8000']
+ALLOWED_HOSTS = ['smogames.onrender.com', 'localhost']
 
 
 # Application definition
@@ -65,11 +65,15 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 import os
+from dotenv import load_dotenv
 import dj_database_url
+
+load_dotenv()  # <-- ISSO É IMPORTANTE
 
 DATABASES = {
     'default': dj_database_url.config(default=os.getenv("DATABASE_URL"))
 }
+print("DATABASE_URL:", os.getenv("DATABASE_URL"))
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
