@@ -1,8 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <title>Hello, World!</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="{% static 'searchs.css' %}" />
   </head>
   <body>
       <div id="root">
@@ -14,9 +15,10 @@
         </section>
        
         <main>
-          <div class="question"></div>
-           <div class="question"></div>
-            <div class="question"></div>
+          {% for pesquisa in pesquisas %}
+          <div class="question">isso é uma pesquisa</div>
+
+          {% endfor %}
         </main>
        
         <footer>
