@@ -1,13 +1,36 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'style.css'%}">
-</head>
-<body>
-    teste
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div id="main-content__area">
+<div class="main-initial__text-area">
+    <h2>SMOGAMES</h2>
+    <h3>O lugar perfeito para encontrar seus produtos, jogos e periféricos favoritos.</h3>
+</div>
+<div class="main-initial__image-area">
+    <img src="https://uploads.onecompiler.io/42r4msmut/43sndjnym/undertale-napstablook-in-headphones-animated-custom-cursor-removebg-preview.png" alt="monster__image" id="main__image" class="main__ops">
+    <span id="main-initial__min-area">
+    <h2>SMOGAMES</h2>
+    <h3>O lugar perfeito para encontrar seus produtos, jogos e periféricos favoritos.</h3>
+    </span>
+</div>
+</div>
+
+<div class="main-alsos__area">
+<div class="main-elements">
+    <h2>Lorem Ipsum</h2>
+    <p>Open Desur</p>
+</div>
+    <div class="main-elements">
+    <h2>Lorem Ipsum</h2>
+    <p>Open Desur</p>
+</div>
+    <div class="main-elements">
+    <h2>Lorem Ipsum</h2>
+    <p>Open Desur</p>
+</div>
+    <div class="main-elements">
+    <h2>Lorem Ipsum</h2>
+    <p>Open Desur</p>
+</div>
+</div>
+{% endblock %}

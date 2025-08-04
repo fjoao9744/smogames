@@ -13,7 +13,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect("home")
+            return redirect("homepage")
         else:
             return render(request, "login.html", {"error": "Credenciais inválidas"})
     
@@ -32,7 +32,7 @@ def register_view(request):
         user = User.objects.create_user(username=username, email=email, password=password)
         login(request, user)
         
-        return redirect("homepage")
+        return redirect("login")
 
 def logout_view(request):
     logout(request)

@@ -1,38 +1,33 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello, World!</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
-  </head>
-  <body>
-      <div id="root">
-        <section>
-        </section>
-        <main>
-          
-          <div id="login__area">
-            
-            <div class="login__header">
-              <div class="login__title"><h2>Bem vindo ao Smogames!</h2></div>
-              <input type="text" name="username" id="email__login" class="input__types" placeholder="Informar username" required/>
-              <input type="text" name="email" id="email__login" class="input__types" placeholder="Informar email" required/>
-              <input type="text" name="password" id="email__login" class="input__types" placeholder="Informar senha" required/>
-              <button id="submit__info">Continuar</button>
-              <span>Sem Conta? <a href="{% url 'register' %}">Registre-se aqui!</a></span>
-            </div>
-         <div class="login__options"><div class="line__style"></div>  ou <div class="line__style"></div></div>
-         <div class="login__main">
-           <button type="submit" class="google__submit box">Continuar com o Google</button>
-           <div class="login__alert box">
-            Ao continuar, você concorda em receber chamadas e mensagens por Email, inclusive automáticas, da Smogames e de suas afiliadas.
-            </div>
-         </div>
+
+{% block title %}Entre{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'auth.css' %}" />
+{% endblock %}
+
+{% block conteudo %}
+<section>
+</section>
+  <main>
+    <div id="login__area">
+      <form class="login__header" method="POST"> {% csrf_token %}
+        <div class="login__title"><h2>Bem vindo ao Smogames!</h2></div>
+        <input type="text" name="username" id="email__login" class="input__types" placeholder="Informar username" required/>
+        <input type="text" name="email" id="email__login" class="input__types" placeholder="Informar email" required/>
+        <input type="text" name="password" id="email__login" class="input__types" placeholder="Informar senha" required/>
+        <button id="submit__info" type="submit">Continuar</button>
+        <span>Possui Conta? <a href="{% url 'login' %}">Entre!</a></span>
+      </form>
+    <div class="login__options"><div class="line__style"></div>  ou <div class="line__style"></div></div>
+    <div class="login__main">
+      <button type="submit" class="google__submit box">Continuar com o Google</button>
+      <div class="login__alert box">
+      Ao continuar, você concorda em receber chamadas e mensagens por Email, inclusive automáticas, da Smogames e de suas afiliadas.
       </div>
-        </main>
-      </div>
-      
-      
-      <script src="script.js"></script>
-  </body>
-</html>
+    </div>
+</div>
+</main>
+  
+{% endblock %}

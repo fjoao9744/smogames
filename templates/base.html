@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+
+    <title>{% block title %}Smogames hub{% endblock %}</title>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="header-button__small-screen">
+            <img src="{% static 'imagens/logo-smogames.png' %}" alt="logo-smogames" id="header__logo" class="header__ops"> 
+            <span id="options-small__acess">
+                <img src="https://uploads.onecompiler.io/42r4msmut/43sne9k6e/tracinhos.webp" alt="menu" id="points__options" class="header__ops">
+            </span>
+        </div>
+        
+        <div class="header-buttons__area header__ops">
+            <img src="{% static 'imagens/logo-smogames.png' %}" alt="logo-smogames" id="header__logo" class="header__ops"> 
+            <span class="button-products__header header__buttons">Produtos</span>
+            <span class="button-explore__header header__buttons">Explorar</span>
+            <span class="button-support__header header__buttons">Suporte</span>
+            <span class="button-sign__header header__buttons">
+                {% if user %}
+                <a href="{% url 'logout' %}">Sair</a>
+                {% else %}
+                <a href="{% url 'login' %}">Logar</a>
+                <a href="{% url 'register' %}">Registrar</a>
+                {% endif %}
+
+            </span>
+        </div> 
+        
+        <div class="header-search__area header__ops">
+            <a href="#">PESQUISA</a>
+        </div>
+    </header>
+
+    <main>
+        {% block conteudo %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="footer-elements">
+            <h2>Produtos</h2>
+            <div class="footer-elements__topics">
+                <span><a href="#">Lorem Ipsum</a></span> 
+                <span><a href="#">Open Desur</a></span> 
+                <span><a href="#">Smogon and Capa</a></span> 
+            </div>
+        </div>
+        <div class="footer-elements">
+            <h2>Outras empresas</h2>
+            <div class="footer-elements__topics">
+                <span><a href="#">Smogon Int.</a></span> 
+                <span><a href="#">Primor</a></span> 
+                <span><a href="#">Smogon Sistemas Inteligentes</a></span> 
+                <span><a href="#">SmogonVerse</a></span> 
+            </div>
+        </div>
+        <div class="footer-elements">
+            <h2>Criadores</h2>
+            <div class="footer-elements__topics">
+                <span><a href="#">João F. Cheroto</a></span> 
+                <span><a href="#">Hendrick Silva</a></span> 
+                <span><a href="#">Yan Andreatta</a></span> 
+                <span><a href="#">Moisés Rossi</a></span> 
+                <span><a href="#">Otavio Badiani</a></span> 
+            </div>
+        </div>
+        <div class="footer-elements">
+            <h2>Saiba Mais</h2>
+            <div class="footer-elements__topics">
+                <span><a href="#">Lorem Ipsum</a></span> 
+                <span><a href="#">Open Desur</a></span> 
+                <span><a href="#">Bungas</a></span> 
+            </div>
+        </div>
+    </footer>
+
+    <div class="credits">
+        <span><a href="#">@hendrickreis</a></span>
+        <span><a href="#">@JF.</a></span>
+    </div>
+    
+    <div class="header-buttons__small-screen">
+        <div class="header-close__small-area">
+            <span class="small-close__button">X</span>
+        </div>
+        <div class="header-buttons__small-area">
+            <span class="button-products__header header__buttons">Produtos</span>
+            <span class="button-explore__header header__buttons">Explorar</span>
+            <span class="button-support__header header__buttons">Suporte</span>
+            <span class="button-sign__header header__buttons">Logar</span>
+        </div>
+    </div>
+
+    <script src="{% static 'home.js' %}"></script>
+</body>
+</html>
