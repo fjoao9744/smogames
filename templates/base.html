@@ -25,19 +25,23 @@
             <span class="button-products__header header__buttons">Produtos</span>
             <span class="button-explore__header header__buttons">Explorar</span>
             <span class="button-support__header header__buttons">Suporte</span>
-            <span class="button-sign__header header__buttons">
-                {% if user %}
-                <a href="{% url 'logout' %}">Sair</a>
-                {% else %}
-                <a href="{% url 'login' %}">Logar</a>
-                <a href="{% url 'register' %}">Registrar</a>
-                {% endif %}
-
-            </span>
+            {% if user.is_authenticated %}
+                <span class="button-sign__header header__buttons">
+                    <a href="{% url 'logout' %}">Sair</a>
+                </span>
+            {% else %}
+                <span class="button-sign__header header__buttons">
+                    <a href="{% url 'login' %}">Logar</a>
+                </span>
+                <span class="button-sign__header header__buttons">
+                    <a href="{% url 'register' %}">Registrar</a>
+                </span>
+            {% endif %}
+            
         </div> 
         
         <div class="header-search__area header__ops">
-            <a href="#">PESQUISA</a>
+            <a href="{% url 'pesquisas' %}">PESQUISAS</a>
         </div>
     </header>
 

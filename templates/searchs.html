@@ -1,30 +1,30 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello, World!</title>
-    <link rel="stylesheet" href="{% static 'searchs.css' %}" />
-  </head>
-  <body>
-      <div id="root">
-        <section>
-          <div id="title__area">
-            <h1>Lorem Ipsum</h1>
-            <h2>Open Desur</h2>
-          </div>
-        </section>
-       
-        <main>
-          {% for pesquisa in pesquisas %}
-          <div class="question">isso é uma pesquisa</div>
 
-          {% endfor %}
-        </main>
-       
-        <footer>
-          <div><a href="#">Voltar</a></div> <div><a href="#">@Github</a></div>
-        </footer>
-      </div>
-      <script src="script.js"></script>
-  </body>
-</html>
+{% block title %}Pesquisas{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'searchs.css' %}" />
+{% endblock %}
+
+{% block conteudo %}
+<div id="root">
+  <section>
+    <div id="title__area">
+      <h1>Lorem Ipsum</h1>
+      <h2>Open Desur</h2>
+    </div>
+  </section>
+  
+  <main>
+    {% for pesquisa in pesquisas %}
+    <div class="question">isso é uma pesquisa</div>
+  
+    {% endfor %}
+  </main>
+  
+  <footer>
+    <div><a href="{% url 'homepage' %}">Voltar</a></div> <div><a href="#">@Github</a></div>
+  </footer>
+</div>
+{% endblock %}
