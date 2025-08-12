@@ -2,21 +2,18 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Pesquisa(models.Model):
-    nome = models.TextField(default="")
+    titulo = models.TextField(default="")
     perguntas = models.JSONField(default=list)
     
-
-def verificar_pesquisas():
-    pesquisas = {str(p.id): True for p in Pesquisa.objects.all()}
-    print(pesquisas)
+    def __str__(self):
+        return self.titulo
     
-    return pesquisas
+class Respostas(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    pesquisa = models.ForeignKey(Pesquisa, on_delete=models.CASCADE)
+    respostas = models.JSONField(default=list)
     
-class Pessoa(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    pesquisas = models.JSONField(default=verificar_pesquisas, blank=True)
+    data_resposta = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.user.username
-
-    
+        return f"Respostas de {self.usuario} para {self.pesquisa}"

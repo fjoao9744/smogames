@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<form method="POST" action="/create/"> 
+    {% csrf_token %}
+    <input type="text" name="titulo" placeholder="digite o titulo da pesquisa">
+    <input type="text" name="json" placeholder="indexe o json da pesquisa aqui">
+    <button type="submit">enviar</button>
+</form>
+
+{% endblock %}
