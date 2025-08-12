@@ -20,8 +20,8 @@
     {% for pesquisa in pesquisas %}
     <div class="question">
       <h1>{{pesquisa.titulo}}</h1>
-      {{pesquisa}}
-      <button>fazer</button>
+      {{pesquisa.id}}
+      <button><a href="/pesquisas/{{ pesquisa.id }}">fazer</a></button>
     </div>
   
     {% endfor %}
@@ -31,4 +31,6 @@
     <div><a href="{% url 'homepage' %}">Voltar</a></div> <div><a href="#">@Github</a></div>
   </footer>
 </div>
+
+
 {% endblock %}
