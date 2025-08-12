@@ -29,5 +29,12 @@
     </div>
 </div>
 </main>
+
+<script>
+  document.getElementsByTagName("form")[0].addEventListener("submit", () => {
+    document.getElementById("submit__info").disabled = true;
+    document.getElementById("submit__info").innerText = "Enviando..."; 
+  })
+</script>
   
 {% endblock %}

@@ -18,7 +18,11 @@
   
   <main>
     {% for pesquisa in pesquisas %}
-    <div class="question">isso é uma pesquisa</div>
+    <div class="question">
+      <h1>{{pesquisa.titulo}}</h1>
+      {{pesquisa}}
+      <button>fazer</button>
+    </div>
   
     {% endfor %}
   </main>
