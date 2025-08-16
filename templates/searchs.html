@@ -18,12 +18,15 @@
   
   <main>
     {% for pesquisa in pesquisas %}
-    <div class="question">
-      <h1>{{pesquisa.titulo}}</h1>
-      {{pesquisa.id}}
-      <button><a href="/pesquisas/{{ pesquisa.id }}">fazer</a></button>
-    </div>
-  
+      <div class="question">
+        <h1>{{ pesquisa.titulo }}</h1>
+        {% if pesquisa.feito %}
+        {{ pesquisa.id }}
+        <button><a href="/pesquisas/{{ pesquisa.id }}">Fazer</a></button>
+        {% else %}
+        <h2>Está feita!</h2>
+        {% endif %}
+      </div>
     {% endfor %}
   </main>
   

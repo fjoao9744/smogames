@@ -1,3 +1,47 @@
+{% extends "base.html" %}
 {% load static %}
 
-{{ form.as_p }}
+{% block title %}Pesquisa {{ pesquisa_id }}{% endblock %}
+
+
+{% block conteudo %}
+<style>
+    #root {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    form {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    form > div {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+
+<div id="root">
+    <form action="" method="POST"> {% csrf_token %}
+    
+        {% for field in form %}
+        <div>
+            {{ field.label_tag }}
+            {{ field }}
+            {% if field.help_text %}
+            <small class="text-gray-500">{{ field.help_text }}</small>
+            {% endif %}
+        </div>
+        {% endfor %}
+        {% for error in field.errors %}
+        <p>{{ error }}</p>
+        {% endfor %}
+    
+        <button type="submit">Enviar</button>
+    
+    </form>
+</div>
+{% endblock %}
