@@ -1,0 +1,146 @@
+<style>
+.container {
+  display: flex;
+  flex-direction: column; /* cada pesquisa em linha diferente */
+  gap: 40px;
+}
+
+.pesquisa-block {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.graficos {
+  display: flex;
+  flex-wrap: wrap; /* gráficos lado a lado dentro da pesquisa */
+  gap: 20px;
+}
+
+.grafico {
+  text-align: center;
+  width: 24%;
+}
+
+.legenda {
+  margin-top: 10px;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.cor {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+</style>
+
+
+<div class="container" id="graficos-container"></div>
+
+<script>
+  const dadosPorPesquisa = {}; // { pesquisa_id: { pergunta: {resposta: contagem} } }
+const ids = {{ ids|safe }};
+const promises = ids.map(id =>
+  fetch(`/api/${id}/`).then(res => res.json())
+);
+
+Promise.all(promises).then(resultsArray => {
+  // Preenche dadosPorPesquisa
+  resultsArray.forEach((data, idx) => {
+    const pesquisaId = ids[idx];
+    dadosPorPesquisa[pesquisaId] = {};
+
+    data.forEach(item => {
+      for (let pergunta in item.respostas) {
+        const resposta = item.respostas[pergunta];
+
+        if (!dadosPorPesquisa[pesquisaId][pergunta]) {
+          dadosPorPesquisa[pesquisaId][pergunta] = {};
+        }
+        if (!dadosPorPesquisa[pesquisaId][pergunta][resposta]) {
+          dadosPorPesquisa[pesquisaId][pergunta][resposta] = 0;
+        }
+        dadosPorPesquisa[pesquisaId][pergunta][resposta] += 1;
+      }
+    });
+  });
+
+  const container = document.getElementById("graficos-container");
+  const colors = ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF"];
+
+  // Para cada pesquisa
+  Object.entries(dadosPorPesquisa).forEach(([pesquisaId, perguntas]) => {
+    const pesquisaBlock = document.createElement("div");
+    pesquisaBlock.classList.add("pesquisa-block");
+
+    const tituloPesquisa = document.createElement("h2");
+    tituloPesquisa.textContent = `Pesquisa ${pesquisaId}`;
+    pesquisaBlock.appendChild(tituloPesquisa);
+
+    const graficosDiv = document.createElement("div");
+    graficosDiv.classList.add("graficos");
+    pesquisaBlock.appendChild(graficosDiv);
+
+    // Para cada pergunta
+    Object.entries(perguntas).forEach(([pergunta, respostas]) => {
+      const graficoDiv = document.createElement("div");
+      graficoDiv.classList.add("grafico");
+
+      const canvas = document.createElement("canvas");
+      canvas.width = 150;
+      canvas.height = 150;
+      graficoDiv.appendChild(canvas);
+
+      const legendaDiv = document.createElement("div");
+      legendaDiv.classList.add("legenda");
+      graficoDiv.appendChild(legendaDiv);
+
+      graficosDiv.appendChild(graficoDiv);
+
+      // Desenha gráfico
+      const ctx = canvas.getContext("2d");
+      let startAngle = 0;
+      const total = Object.values(respostas).reduce((sum, val) => sum + val, 0);
+
+      Object.entries(respostas).forEach(([label, value], index) => {
+        const sliceAngle = (value / total) * 2 * Math.PI;
+
+        ctx.beginPath();
+        ctx.moveTo(75, 75);
+        ctx.arc(75, 75, 75, startAngle, startAngle + sliceAngle);
+        ctx.closePath();
+        ctx.fillStyle = colors[index % colors.length];
+        ctx.fill();
+
+        startAngle += sliceAngle;
+
+        // Legenda
+        const itemDiv = document.createElement("div");
+        itemDiv.classList.add("legenda-item");
+
+        const corDiv = document.createElement("div");
+        corDiv.classList.add("cor");
+        corDiv.style.backgroundColor = colors[index % colors.length];
+
+        const span = document.createElement("span");
+        span.textContent = `${label} (${value})`;
+
+        itemDiv.appendChild(corDiv);
+        itemDiv.appendChild(span);
+        legendaDiv.appendChild(itemDiv);
+      });
+
+      const titulo = document.createElement("h3");
+      titulo.textContent = pergunta;
+      graficoDiv.insertBefore(titulo, canvas);
+    });
+
+    container.appendChild(pesquisaBlock);
+  });
+});
+
+</script>

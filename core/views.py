@@ -16,3 +16,8 @@ def create(request):
         pesquisa = Pesquisa(titulo=titulo, perguntas=perguntas)
         pesquisa.save()
         return redirect("homepage")
+
+def results(request):
+    ids = Pesquisa.objects.values_list('id', flat=True)
+    return render(request, "results.html", {"ids": list(ids)})
+
