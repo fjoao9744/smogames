@@ -9,30 +9,28 @@
 
 {% block conteudo %}
 <div id="root">
+  <h1>Pesquisas</h1>
   <section>
     <div id="title__area">
-      <h1>Lorem Ipsum</h1>
-      <h2>Open Desur</h2>
+      <h2>Aqui você poderá responder a pesquisas que contribuem e muito com a qualidade dos nossos produtos! ☺</h2>
     </div>
   </section>
   
   <main>
     {% for pesquisa in pesquisas %}
       <div class="question">
-        <h1>{{ pesquisa.titulo }}</h1>
         {% if pesquisa.feito %}
-        {{ pesquisa.id }}
+        <img src="https://cdn-icons-png.flaticon.com/512/2422/2422560.png" alt="" class="search_img">
+        <h1 style="margin-bottom: 10px;">{{ pesquisa.titulo }}</h1>
         <button><a href="/pesquisas/{{ pesquisa.id }}">Fazer</a></button>
         {% else %}
-        <h2>Está feita!</h2>
+        <img src="https://cdn-icons-png.flaticon.com/512/4436/4436481.png" alt="" class="search_img">
+        <h1 style="margin-bottom: 10px;">{{ pesquisa.titulo }}</h1>
+        <h2 style="color: green;">Está feita!</h2>
         {% endif %}
       </div>
     {% endfor %}
   </main>
-  
-  <footer>
-    <div><a href="{% url 'homepage' %}">Voltar</a></div> <div><a href="#">@Github</a></div>
-  </footer>
 </div>
 
 

@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block conteudo %}
+
 <div id="main-content__area">
 <div class="main-initial__text-area">
-    <h2>SMOGAMES</h2>
+    <img src="{% static 'imagens/logo-smogames.png' %}" alt="logo-smogames" style="width: 100%; height: auto; object-fit: cover;">
     <h3>O lugar perfeito para encontrar seus produtos, jogos e periféricos favoritos.</h3>
 
 </div>
@@ -35,4 +37,5 @@
     <a href="#">Aqui</a>
 </div>
 </div>
+
 {% endblock %}

@@ -14,14 +14,14 @@
 <body>
     <header>
         <div class="header-button__small-screen">
-            <img src="{% static 'imagens/logo-smogames.png' %}" alt="logo-smogames" id="header__logo" class="header__ops"> 
+            <img src="{% static 'imagens/logo-smog.png' %}" alt="logo-smogames" id="header__logo" class="header__ops"> 
             <span id="options-small__acess">
                 <img src="https://uploads.onecompiler.io/42r4msmut/43sne9k6e/tracinhos.webp" alt="menu" id="points__options" class="header__ops">
             </span>
         </div>
         
         <div class="header-buttons__area header__ops">
-            <img src="{% static 'imagens/logo-smogames.png' %}" alt="logo-smogames" id="header__logo" class="header__ops" 
+            <img src="{% static 'imagens/logo-smog.png' %}" alt="logo-smogames" id="header__logo" class="header__ops" 
             onclick="window.location.href='/'">
             <span class="button-products__header header__buttons">Produtos</span>
             <span class="button-explore__header header__buttons">Explorar</span>
@@ -106,5 +106,10 @@
     </div>
 
     <script src="{% static 'home.js' %}"></script>
+    <script>
+        if (window.location.pathname === "/") {
+            document.getElementById("header__logo").style.display = "none";
+        }
+    </script>
 </body>
 </html>

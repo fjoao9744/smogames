@@ -45,9 +45,9 @@ main {
 
 .question {
   width: 100%;
-  height: 250px;
+  height: 200px;
   padding: 15px 20px;
-  margin: 20px;
+  margin: 15px;
   border-radius: 6px;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.333);
   background-color: white;
@@ -62,4 +62,13 @@ footer {
   flex-flow: wrap row;
   justify-content: space-around;
   align-items: flex-end;
+}
+
+.search_img {
+  width: 30px;
+}
+
+button {
+  padding: 8px;
+  border-radius: 10px;
 }
