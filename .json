@@ -1,92 +1,56 @@
 [
     {
-        "id": 1, 
-        "tipo": "multipla_escolha",
-        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
-        "pergunta": "Terror"
+        "id":1,
+        "tipo": "checkbox",
+        "opcoes": ["Sim", "Não"],
+        "pergunta": "Você está satisfeito com os preços em geral?"
     },
     {
-        "id": 2, 
+        "id": 2,
         "tipo": "multipla_escolha",
-        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
-        "pergunta": "Ação"
+        "opcoes": ["Mais de 1000 reais", "entre 500 a 1000 reais", "entre 100 a 500 reais", "menos de 100 reais", "menos de 10 reais"],
+        "pergunta": "Quanto você estaria disposto a gastar por um jogo que você aguarda muito e quer jogar?"
     },
     {
-        "id": 3, 
-        "tipo": "multipla_escolha",
-        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
-        "pergunta": "Aventura"
+        "id": 3,
+        "tipo": "checkbox",
+        "opcoes": ["Preço baixo(promoções e descontos)", "Qualidade e avaliações", "Gênero ou estilo de Jogo", "Plataforma", "Marketing ou visibilidade", "Conteúdo/duração", "Nostalgia", "Amigos"],
+        "pergunta": "Quais fatores determinam a sua compra de um jogo?"
     },
     {
-        "id": 4, 
+        "id": 4,
         "tipo": "multipla_escolha",
-        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
-        "pergunta": "RPG"
+        "opcoes": [
+            "Terror",
+            "Ação",
+            "Aventura",
+            "RPG",
+            "FPS",
+            "Estratégia",
+            "Simulação",
+            "Esportes",
+            "Survival",
+            "Puzzle",
+            "Outro"
+        ],
+        "pergunta": "Com qual gênero você mais gasta?"
     },
     {
-        "id": 5, 
+        "id": 5,
         "tipo": "multipla_escolha",
-        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
-        "pergunta": "FPS"
+        "opcoes": ["Muito boa", "Boa", "Mais ou menos", "Ruim", "Horrível"],
+        "pergunta": "Qual sua relação com jogos indies"
     },
     {
-        "id": 6, 
+        "id": 6,
         "tipo": "multipla_escolha",
-        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
-        "pergunta": "Estratégia"
+        "opcoes": ["Compra uma vez e tem pra sempre", "Gratuitos", "Microtransações dentro do jogo (passes, skins, etc)", "Assinaturas (Xbox Game Pass, PS Plus, Nintendo switch online, etc)"],
+        "pergunta": "Qual a sua preferência de pagamento em jogos?"
     },
     {
-        "id": 7, 
+        "id": 7,
         "tipo": "multipla_escolha",
-        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
-        "pergunta": "Simulação"
-    },
-    {
-        "id": 8, 
-        "tipo": "multipla_escolha",
-        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
-        "pergunta": "Esportes"
-    },
-    {
-        "id": 9, 
-        "tipo": "multipla_escolha",
-        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
-        "pergunta": "Survival"
-    },
-    {
-        "id": 10, 
-        "tipo": "multipla_escolha",
-        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
-        "pergunta": "Puzzle"
-    },
-    {
-        "id": 11, 
-        "tipo": "multipla_escolha",
-        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
-        "pergunta": "Roguelike"
-    },
-    {
-        "id": 12, 
-        "tipo": "multipla_escolha",
-        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
-        "pergunta": "Metroidvania"
-    },
-    {
-        "id": 13, 
-        "tipo": "multipla_escolha",
-        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
-        "pergunta": "MOBA"
-    },
-    {
-        "id": 14, 
-        "tipo": "multipla_escolha",
-        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
-        "pergunta": "Hack and Slash"
-    },
-    {
-        "id": 15, 
-        "tipo": "multipla_escolha",
-        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
-        "pergunta": "Sandbox"
+        "opcoes": ["Assistir anúncio", "Pagar"],
+        "pergunta": "Você prefere pagar por um jogo ou assistir anúncios dentro dele?"
     }
 ]

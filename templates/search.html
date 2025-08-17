@@ -3,45 +3,55 @@
 
 {% block title %}Pesquisa {{ pesquisa_id }}{% endblock %}
 
+{% block head %}
+<link rel="stylesheet" href="{% static 'search.css' %}" />
+{% endblock %}
 
 {% block conteudo %}
-<style>
-    #root {
-        display: flex;
-        justify-items: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    form {
-        display: flex;
-        justify-items: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    form > div {
-        display: flex;
-        flex-direction: column;
-    }
-</style>
 
-<div id="root">
-    <form action="" method="POST"> {% csrf_token %}
-    
-        {% for field in form %}
-        <div>
-            {{ field.label_tag }}
-            {{ field }}
-            {% if field.help_text %}
-            <small class="text-gray-500">{{ field.help_text }}</small>
-            {% endif %}
-        </div>
-        {% endfor %}
-        {% for error in field.errors %}
-        <p>{{ error }}</p>
-        {% endfor %}
-    
-        <button type="submit">Enviar</button>
-    
-    </form>
-</div>
+<form action="" method="POST" id="root"> {% csrf_token %}
+<header class="root__header">
+    <div class="root-header__title">{{ titulo }}</div>
+    <div class="root-header__p">Não se esqueça de dar a sua opnião sincera 😉</div>
+</header>
+
+<main class="root__main">
+    {% for field in form %}
+    <div class="
+        questions 
+        {% if field.field.widget.input_type == 'select' %} question__select {% endif %}
+        {% if field.field.widget.input_type == 'radio' %} question__options {% endif %}
+        {% if field.field.widget.input_type == 'checkbox' %} question__radio {% endif %}
+        {% if field.field.widget.input_type == 'text' %} question__paragraph {% endif %}
+        {% if field.field.widget.input_type == 'number' %} question__paragraph {% endif %}
+    ">
+
+    {{ field.label_tag }}
+    {{ field }}
+    {% if field.help_text %}
+    <small class="text-gray-500">{{ field.help_text }}</small>
+    {% endif %}
+
+    </div>
+    {% endfor %}
+    {% for error in field.errors %}
+        <p class="error">{{ error }}</p>
+    {% endfor %}
+</main>
+
+<footer class="root__footer">
+    <div class="terms__area">
+    <p>Termos</p>
+    <label>
+        <input type="checkbox" name="termos" id="" required/>
+        Li e aceito a política de privacidade.
+    </label>
+    <p>Obrigatório para enviar.</p>
+    </div>
+    <div class="ending__area">
+    <button type="submit" id="enviar">Enviar</button>
+    <button id="limpar" type="reset">Limpar respostas</button>
+    </div>
+</footer>
+
 {% endblock %}

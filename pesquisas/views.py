@@ -21,7 +21,7 @@ def pesquisa(request, pesquisa_id):
     if request.method == "GET":
         pesquisa = Pesquisa.objects.get(id=pesquisa_id)
         form = PesquisaForm(pesquisa=pesquisa.perguntas)
-        return render(request, "search.html", {"form": form, "pesquisa_id": pesquisa_id})
+        return render(request, "search.html", {"form": form, "pesquisa_id": pesquisa_id, "titulo": pesquisa.titulo})
     if request.method == "POST":
         data = request.POST.copy()
         data.pop('csrfmiddlewaretoken', None)

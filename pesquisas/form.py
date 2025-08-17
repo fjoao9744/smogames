@@ -26,7 +26,7 @@ class PesquisaForm(forms.Form):
                     self.fields[pergunta_num] = forms.IntegerField(
                         label=pergunta["pergunta"], 
                         help_text="Digite somente números inteiros.", 
-                        widget=forms.NumberInput(attrs={"placeholder": "Digite aqui."}))
+                        widget=forms.NumberInput(attrs={"placeholder": "Digite aqui.", "min":0, "max":100}))
                     
                 elif pergunta["tipo"] == "radio":
                     self.fields[pergunta_num] = forms.ChoiceField(
