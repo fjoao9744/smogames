@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1, 
+        "tipo": "multipla_escolha",
+        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
+        "pergunta": "Terror"
+    },
+    {
+        "id": 2, 
+        "tipo": "multipla_escolha",
+        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
+        "pergunta": "Ação"
+    },
+    {
+        "id": 3, 
+        "tipo": "multipla_escolha",
+        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
+        "pergunta": "Aventura"
+    },
+    {
+        "id": 4, 
+        "tipo": "multipla_escolha",
+        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
+        "pergunta": "RPG"
+    },
+    {
+        "id": 5, 
+        "tipo": "multipla_escolha",
+        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
+        "pergunta": "FPS"
+    },
+    {
+        "id": 6, 
+        "tipo": "multipla_escolha",
+        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
+        "pergunta": "Estratégia"
+    },
+    {
+        "id": 7, 
+        "tipo": "multipla_escolha",
+        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
+        "pergunta": "Simulação"
+    },
+    {
+        "id": 8, 
+        "tipo": "multipla_escolha",
+        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
+        "pergunta": "Esportes"
+    },
+    {
+        "id": 9, 
+        "tipo": "multipla_escolha",
+        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
+        "pergunta": "Survival"
+    },
+    {
+        "id": 10, 
+        "tipo": "multipla_escolha",
+        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
+        "pergunta": "Puzzle"
+    },
+    {
+        "id": 11, 
+        "tipo": "multipla_escolha",
+        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
+        "pergunta": "Roguelike"
+    },
+    {
+        "id": 12, 
+        "tipo": "multipla_escolha",
+        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
+        "pergunta": "Metroidvania"
+    },
+    {
+        "id": 13, 
+        "tipo": "multipla_escolha",
+        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
+        "pergunta": "MOBA"
+    },
+    {
+        "id": 14, 
+        "tipo": "multipla_escolha",
+        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
+        "pergunta": "Hack and Slash"
+    },
+    {
+        "id": 15, 
+        "tipo": "multipla_escolha",
+        "opcoes": ["Jogaria todo dia", "Muito bom", "As vezes é legal", "Prefiro manter distância", "Lixo!"],
+        "pergunta": "Sandbox"
+    }
+]

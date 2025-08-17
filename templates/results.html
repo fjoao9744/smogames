@@ -1,3 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Resultados{{ pesquisa_id }}{% endblock %}
+
+{% block conteudo %}
+
 <style>
 .container {
   display: flex;
@@ -37,7 +44,6 @@
   margin-right: 5px;
 }
 </style>
-
 
 <div class="container" id="graficos-container"></div>
 
@@ -144,3 +150,5 @@ Promise.all(promises).then(resultsArray => {
 });
 
 </script>
+
+{% endblock %}
