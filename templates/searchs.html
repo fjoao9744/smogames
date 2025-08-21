@@ -22,7 +22,7 @@
         {% if pesquisa.feito %}
         <img src="https://cdn-icons-png.flaticon.com/512/2422/2422560.png" alt="" class="search_img">
         <h1 style="margin-bottom: 10px;">{{ pesquisa.titulo }}</h1>
-        <button><a href="/pesquisas/{{ pesquisa.id }}">Fazer</a></button>
+        <button onclick="window.location.pathname = '/pesquisas/{{ pesquisa.id }}/'">Fazer</button>
         {% else %}
         <img src="https://cdn-icons-png.flaticon.com/512/4436/4436481.png" alt="" class="search_img">
         <h1 style="margin-bottom: 10px;">{{ pesquisa.titulo }}</h1>
@@ -32,5 +32,6 @@
     {% endfor %}
   </main>
 </div>
+
 
 {% endblock %}
